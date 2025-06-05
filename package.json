@@ -9,16 +9,21 @@
     "build": "electron-builder",
     "dist": "electron-builder --publish=never"
   },
-  "keywords": ["electron", "image", "converter", "desktop"],
+  "keywords": [
+    "electron",
+    "image",
+    "converter",
+    "desktop"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
     "electron": "^27.0.0",
-    "electron-builder": "^24.6.4"
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
-    "sharp": "^0.32.6",
-    "heic-convert": "^1.2.4"
+    "heic-convert": "^1.2.4",
+    "sharp": "^0.32.6"
   },
   "build": {
     "appId": "com.imageconverter.app",
