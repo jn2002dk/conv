@@ -1,0 +1,3 @@
+@echo off
+echo Starting Image Format Converter in Development Mode...
+npm run dev

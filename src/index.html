@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Format Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ Image Format Converter</h1>
+            <p>Convert images between different formats with ease</p>
+        </header>
+
+        <main>
+            <!-- File Selection Area -->
+            <section class="file-section">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-content">
+                        <div class="drop-icon">📁</div>
+                        <h3>Drag & Drop Images Here</h3>
+                        <p>or</p>
+                        <button class="btn btn-primary" id="selectFilesBtn">Select Files</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selected Files Display -->
+            <section class="files-section" id="filesSection" style="display: none;">
+                <h3>Selected Files</h3>
+                <div class="files-list" id="filesList"></div>
+            </section>
+
+            <!-- Conversion Settings -->
+            <section class="settings-section" id="settingsSection" style="display: none;">
+                <h3>Conversion Settings</h3>
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <label for="outputFormat">Output Format:</label>
+                        <select id="outputFormat">
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WebP</option>
+                            <option value="avif">AVIF</option>
+                            <option value="tiff">TIFF</option>
+                            <option value="bmp">BMP</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="quality">Quality: <span id="qualityValue">85</span>%</label>
+                        <input type="range" id="quality" min="1" max="100" value="85">
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="outputDir">Output Directory:</label>
+                        <div class="dir-selector">
+                            <input type="text" id="outputDir" placeholder="Select output directory..." readonly>
+                            <button class="btn btn-secondary" id="selectDirBtn">Browse</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Convert Button -->
+            <section class="convert-section" id="convertSection" style="display: none;">
+                <button class="btn btn-success btn-large" id="convertBtn">
+                    <span class="btn-text">Convert Images</span>
+                    <span class="btn-loader" style="display: none;">Converting...</span>
+                </button>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section" id="progressSection" style="display: none;">
+                <h3>Conversion Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">0 / 0 files converted</div>
+                <div class="progress-log" id="progressLog"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
